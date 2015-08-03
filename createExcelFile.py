@@ -1,7 +1,7 @@
 import xlsxwriter
 import os
 from feedback import *
-def createFile(subj, trial_type, player_times, std, m, r_std, r_m):
+def createFile(subj, trial_type, session, player_times, std, m, r_std, r_m):
 	os.chdir('/home/matt/Documents/Drummer Experiment/Data')
 	workbk = xlsxwriter.Workbook(('%s.xlsx')%subj)
 	worksheet = workbk.add_worksheet()
@@ -10,13 +10,14 @@ def createFile(subj, trial_type, player_times, std, m, r_std, r_m):
 	worksheet.write(0, 2, 'Trial Block')
 	worksheet.write(0, 3, 'Trial by Block')
 	worksheet.write(0, 4, "Trial Type")
-	worksheet.write(0, 5, "Player Times")
-	worksheet.write(0, 6, "Frequency of Tapping")
-	worksheet.write(0, 7, "STDEV")
-	worksheet.write(0, 8, "MEAN")
-	worksheet.write(0, 9, "Rounded Frequency of Tapping")
-	worksheet.write(0, 10, "Rounded STDEV")
-	worksheet.write(0, 11, "Rounded MEAN")
+	worksheet.write(0, 5, "Session")
+	worksheet.write(0, 6, "Player Times")
+	worksheet.write(0, 7, "Frequency of Tapping")
+	worksheet.write(0, 8, "STDEV")
+	worksheet.write(0, 9, "MEAN")
+	worksheet.write(0, 10, "Rounded Frequency of Tapping")
+	worksheet.write(0, 11, "Rounded STDEV")
+	worksheet.write(0, 12, "Rounded MEAN")
 
 	#Subj name
 	col = 0
@@ -61,6 +62,13 @@ def createFile(subj, trial_type, player_times, std, m, r_std, r_m):
 			worksheet.write(row, col, item)
 			row+=1
 		row = 251
+
+	#Session
+	row = 1
+	col += 1
+	for i in range(501): 
+		worksheet.write(row, col, session[0])
+		row+=1
 
 	#Player times
 	row = 1
