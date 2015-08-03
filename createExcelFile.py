@@ -67,7 +67,7 @@ def createFile(subj, trial_type, session, player_times, std, m, r_std, r_m):
 	#Session
 	row = 1
 	col += 1
-	for i in range(501): 
+	for i in range(500): 
 		worksheet.write(row, col, session[0])
 		row+=1
 
