@@ -42,7 +42,8 @@ def createFile(subj, trial_type, session, player_times, std, m, r_std, r_m):
 			worksheet.write(row, col, i)
 			row+=1
 		i+=1
-	#Trial block
+
+	#Trialby block
 	row = 1
 	col +=1
 	i = 1

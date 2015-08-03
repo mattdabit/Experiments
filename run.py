@@ -59,7 +59,6 @@ def run():
 
         if trial < 10 and first == 0:
             playAudio(pygame, 0)
-            sess
         elif trial < 10 and first == 1:
             playAudio(pygame, 1)
         elif trial >= 10 and first == 1:
@@ -117,7 +116,7 @@ def run():
 if __name__ == '__main__':
     train(pygame, screen)
     run()
-    createFile(name, session, trial_type, player_times, std, m, r_std, r_m)
+    createFile(name, trial_type, session, player_times, std, m, r_std, r_m)
 
 # Mouse response rate 
     # 500hz - 2ms
